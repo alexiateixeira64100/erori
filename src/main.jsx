@@ -2,6 +2,7 @@ import React,{useState,useEffect,useRef} from 'react';
 import {createRoot} from 'react-dom/client';
 import {ArrowUpRight,ArrowRight,Search,MapPin,Heart,Plus,SlidersHorizontal,X,Check,Leaf,Layers,Armchair,Scissors,Grid2X2,Box,Menu,ChevronDown,Bookmark,ShoppingBag,Recycle,Home,Moon} from 'lucide-react';
 import './style.css';
+import Preloader from './Preloader';
 const photo=(id,w=900)=>`https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=85`;
 const seed=[
 {id:1,title:'Du chêne, des possibles.',material:'Bois',seller:'Atelier Haritza',city:'Bayonne',distance:3,price:15,old:45,qty:'Lot de 8 planches',tag:'La belle trouvaille',color:'sage',image:photo('photo-1518733057094-95b53143d2a7'),desc:'Chutes de chêne massif issues de notre atelier de menuiserie. Des pièces brutes, parfaites pour une étagère, un petit meuble ou votre prochaine idée.',size:'Longueurs de 40 à 80 cm · épaisseur 22 mm'},
@@ -63,4 +64,4 @@ function App(){
  
  </dialog>{toast&&<div className="toast" role="status"><Check size={19}/>{toast}</div>}</>;
 }
-createRoot(document.getElementById('root')).render(<App/>);
+createRoot(document.getElementById('root')).render(<Preloader><App/></Preloader>);
